@@ -2,8 +2,11 @@
   <div class="cover">
     <div class="cover-inner">
       <div class="cover-contents">
-        <h1>私だけのレシピ、集めよう</h1>
-        <a href="" class="btn btn-success btn-lg">RecipeBoxを始める</a>
+        <h1>あなただけのレシピボックス</h1>
+        <p>お気に入りレシピをストックしよう</p>
+        <% unless logged_in? %>
+          <%= link_to 'RecipeBoxを始める', signup_path, class:"btn btn-success btn-lg" %>
+        <% end %>
       </div>
     </div>
   </div>
