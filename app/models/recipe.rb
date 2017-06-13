@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, length: { maximum: 255 }
-  validates :volume, presence: true, numericality: { only_integer: true, less_than: 10 }
+  validates :volume, presence: true, numericality: { only_integer: true, less_than: 50 }
   
   belongs_to :user
   has_many :ingredients, dependent: :destroy

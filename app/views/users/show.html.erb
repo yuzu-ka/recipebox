@@ -1,9 +1,9 @@
 <div class="user-profile">
   <div class="name text-center">
-    <h1><%= @user.name %></h1>
+    <h1><%= current_user.name %></h1>
   </div>
   <div>
-    <%= render 'recipes/recipes', recipes: @recipes, user: @user %>
+    <%= render 'recipes/recipes_short', recipes: @recipes, user: @user %>
     <%= paginate @recipes %>
   </div>
 </div>

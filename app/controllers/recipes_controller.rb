@@ -1,19 +1,19 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [ :edit, :update, :destroy]
   before_action :correct_user, only: [:destroy, :edit, :update]
-  
-
+  before_action :recipe_params_show, only: [:show]
+ 
   def show
   end
  
   def new
     @recipe = current_user.recipes.build
+    @recipe.ingredients.build
+    @recipe.instractions.build
   end
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    # @recipe.ingredients.build
-    # @recipe.instractions.build
     if @recipe.save
       flash[:success] = 'レシピを投稿しました。'
       redirect_to current_user
@@ -39,14 +39,19 @@ class RecipesController < ApplicationController
   
   def recipe_params
     params.require(:recipe).permit(
-      :title, :content, :volume
-      # ingredients_attributes: [:id, :recipe_id, :name, :amount, :_destroy],
-      # instractions_attributes: [:id, :recipe_id, :content, :_destroy]
+      :title, :content, :volume, 
+      ingredients_attributes: [:name, :amount, :_destroy], 
+      instractions_attributes: [:content, :_destroy]
       )
   end
   
   def set_recipe
-    @recipe = User.recipe.find_by(params[:id])
+    @recipe = Recipe.find_by(params[:id])
+  end
+  
+  def recipe_params_show
+    @user = User.find_by(id: params[:user_id])
+    @recipe = @user.recipes.find_by(id: params[:id])
   end
   
   def correct_user

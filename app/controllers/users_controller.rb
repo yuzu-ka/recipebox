@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
   
   def show
-    @user = User.find(params[:id])
-    @recipes = @user.recipes.order('created_at DESC').page(params[:page])
+    @recipes = current_user.recipes.order('created_at DESC').page(params[:page])
   end
 
   def new

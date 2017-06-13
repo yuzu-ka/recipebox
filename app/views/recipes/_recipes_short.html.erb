@@ -1,0 +1,15 @@
+<% recipes.each do |recipe| %>
+  <h1 class="page-header"><%= recipe.title %></h1>
+    <div class="panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <% user = recipe.user %>
+          <%= link_to user.name, user_path(user), class: 'text-left' %><span class="text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <p><%= recipe.content %></p>
+      </div>
+    </div>
+    <%= link_to 'レシピ詳細', recipe_path(recipe, user_id: user.id) %>
+<% end %>
