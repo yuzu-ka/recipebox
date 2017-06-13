@@ -11,6 +11,4 @@
     </div>
   </div>
 <% end %>
-<% if logged_in? %>
-  <%= render 'recipes/recipes_short', recipes: @recipes %>
-<% end %>
+<%= render 'recipes/recipes_short', recipes: @recipes %>
