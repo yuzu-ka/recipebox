@@ -11,5 +11,5 @@
         <p><%= recipe.content %></p>
       </div>
     </div>
-    <%= link_to 'レシピ詳細', recipe_path(recipe, user_id: user.id) %>
+    <%= link_to 'レシピ詳細', recipe_path(recipe) %> <!--動作チェック ,user_id: user.id -->
 <% end %>

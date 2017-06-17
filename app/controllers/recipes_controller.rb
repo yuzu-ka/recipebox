@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -50,8 +51,7 @@ class RecipesController < ApplicationController
   end
   
   def recipe_params_show
-    @user = User.find_by(id: params[:user_id])
-    @recipe = @user.recipes.find_by(id: params[:id])
+    @recipe = Recipe.find_by(id: params[:id])
   end
   
   def correct_user

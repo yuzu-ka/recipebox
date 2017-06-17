@@ -2,11 +2,11 @@
   <%= form_for(recipe) do |f| %>
     <div class="form-group">
       <%= f.label :name, 'レシピタイトル' %>
-      <%= f.text_area :title, class: 'form-control' %>
+      <%= f.text_area :title, class: 'form-control', placeholder:'レシピタイトルを入力' %>
       <%= f.label :name, 'このレシピについて' %>
-      <%= f.text_area :content, class: 'form-control' %>
+      <%= f.text_area :content, class: 'form-control', placeholder: 'レシピコメント（おすすめポイントなど）' %>
       <%= f.label :name, '分量（〜人分）' %>
-      <%= f.number_field :volume, class: 'form-control' %>
+      <%= f.number_field :volume, class: 'form-control', placeholder: '〜人分、整数で入力(例：3)' %>
     </div>
     <div class="form-group">
       <table class="table table-striped table-bordered table-hover">
@@ -17,8 +17,8 @@
           </tr>
           <%= f.nested_fields_for :ingredients, wrapper_tag: :tr do |q| %>
           <div>
-            <td><%= q.text_field :name, class: 'form-control' %></td>
-            <td><%= q.text_field :amount, class: 'form-control' %></td>
+            <td><%= q.text_field :name, class: 'form-control', placeholder:'材料名' %></td>
+            <td><%= q.text_field :amount, class: 'form-control', placeholder:'分量（例：30g, 大さじ1）' %></td>
           </div>
             <td class="col-xs-1">
               <button type="button" class="close form-control" aria-label="Close"><%= q.remove_nested_fields_link %></button>
@@ -36,7 +36,7 @@
           </tr>
           <%= f.nested_fields_for :instractions, wrapper_tag: :tr, class: 'row' do |q| %>
             <td class="col-xs-11">
-              <%= q.text_field :content, class: 'form-control' %>
+              <%= q.text_field :content, class: 'form-control', placeholder:'作り方（手順に応じて入力フィールドを追加してください）' %>
             </td>
             <td class="col-xs-1">
               <button type="button" class="close form-control" aria-label="Close"><%= q.remove_nested_fields_link %></button>
