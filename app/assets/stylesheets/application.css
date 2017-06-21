@@ -19,6 +19,7 @@ footer {
 
 .navbar-brand{
   padding-left: 20px;
+  font-family: 'Walter Turncoat', cursive;
 }
 
 /* cover */
@@ -31,19 +32,42 @@ footer {
   background-size: cover;
 }
 .cover .cover-inner {
-  height: 100%;
+  height: 85%;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%); /* Safari用 */
+  transform: translateY(-50%);
   margin: auto;
   display: table;
+  background: rgba(255,255,255,0.5);
 }
+
 .cover .cover-inner .cover-contents {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   position: relative;
 }
+
 .cover .cover-inner .cover-contents h1 {
-  margin: 0 0 20px 0;
-  color: #fff;
-  text-shadow: 4px 2px 0px #ff918a;
-  letter-spacing: 0.15em;
+  font-family: "Nikukyu";
+  font-size: 39px;
+  margin: 20px auto 0px;
+  color: #6a5959;
+  text-shadow: 4px 2px 0px #ffcccc;
+}
+
+.cover .cover-inner .cover-contents p {
+  font-family: 'Neucha', cursive;
+  font-size: 17px;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.cover .cover-inner .cover-contents h2 {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 20px;
+  margin-top: -10px;
+  margin-bottom: 28px;
 }
