@@ -5,10 +5,10 @@
         <h3 class="text-center text-warning"><%= recipe.title %></h3>
         <% user = recipe.user %>
         <div class="bg-danger">
-          <%= link_to user.name, user_path(user), class: 'label label-success text-left' %><span class="text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
+          <%= link_to user.name, user_path(user), class: 'btn btn-sm btn-success text-left' %><span class="btn btn-sm text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
         </div>
         <p class="text-muted"><%= recipe.content %></p>
-        <%= link_to 'レシピ詳細', recipe_path(recipe), class: "btn btn-xs btn-warning btn-block" %>
+        <%= link_to 'レシピ詳細', recipe_path(recipe), class: "btn btn-sm btn-warning btn-block" %>
       </div>
     </div>
   </div>
