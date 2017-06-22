@@ -1,30 +1,35 @@
-<h1 class="page-header"><%= @recipe.title %></h1>
-  <div class="panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-        <% user = @recipe.user %>
-        <%= link_to user.name, user_path(user), class: 'text-left' %><span class="text-muted pull-right"><%= l @recipe.created_at, format: :short %></span>
-      </h2>
+<div class="well well-lg col-lg-offset-1 col-lg-10">
+  <h1 class="page-header text-center"><%= @recipe.title %></h1>
+    <div class="panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <% user = @recipe.user %>
+          <span class="glyphicon glyphicon-user"></span>
+          <%= link_to user.name, user_path(user), class: 'text-left' %><span class="text-muted pull-right"><%= l @recipe.created_at, format: :short %></span>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <p><%= @recipe.content %></p>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-condensed">
+          <thead>
+            <tr><th>材料</th><th>（<%= @recipe.volume %>人分）</th></tr>
+          </thead>
+          <% @recipe.ingredients.each do |ingredient| %>
+            <tbody>
+              <tr><td><%= ingredient.name %></td><td><%= ingredient.amount %></td></tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+      <div class="panel-body">
+        <h3 class="text-center">作り方</h3>
+        <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-4">
+          <% @recipe.instractions.each_with_index do |instraction, index| %>
+            <p><%= index+1 %>.<%= instraction.content %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="panel-body">
-      <p><%= @recipe.content %></p>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr><th>材料</th><th>（<%= @recipe.volume %>人分）</th></tr>
-        </thead>
-        <% @recipe.ingredients.each do |ingredient| %>
-          <tbody>
-            <tr><td><%= ingredient.name %></td><td><%= ingredient.amount %></td></tr>
-          </tbody>
-        <% end %>
-      </table>
-    </div>
-    <div class="panel-body">
-      <h3>作り方</h3>
-      <% @recipe.instractions.each_with_index do |instraction, index| %>
-        <p><%= index+1 %>.<%= instraction.content %></p>
-      <% end %>
-    </div>
-  </div>
+</div>
