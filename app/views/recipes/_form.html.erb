@@ -16,11 +16,10 @@
             <th>分量</th>
           </tr>
           <%= f.nested_fields_for :ingredients, wrapper_tag: :tr do |q| %>
-          <div>
+            <%= q.hidden_field :id %>
             <td><%= q.text_field :name, class: 'form-control', placeholder:'材料名' %></td>
             <td><%= q.text_field :amount, class: 'form-control', placeholder:'分量（例：30g, 大さじ1）' %></td>
-          </div>
-            <td class="col-xs-1">
+            <td>
               <button type="button" class="close form-control" aria-label="Close"><%= q.remove_nested_fields_link %></button>
             </td>
           <% end %>
@@ -35,12 +34,9 @@
             <th>作り方</th>
           </tr>
           <%= f.nested_fields_for :instractions, wrapper_tag: :tr, class: 'row' do |q| %>
-            <td class="col-xs-11">
-              <%= q.text_field :content, class: 'form-control', placeholder:'作り方（手順に応じて入力フィールドを追加してください）' %>
-            </td>
-            <td class="col-xs-1">
-              <button type="button" class="close form-control" aria-label="Close"><%= q.remove_nested_fields_link %></button>
-            </td>
+            <%= q.hidden_field :id %>
+            <td><%= q.text_field :content, class: 'form-control', placeholder:'作り方（手順に応じて入力フィールドを追加してください）' %></td>
+            <td><button type="button" class="close form-control"><span aria-hidden="true"><%= q.remove_nested_fields_link %></span></button></td>
           <% end %>
         </tbody>
       </table>

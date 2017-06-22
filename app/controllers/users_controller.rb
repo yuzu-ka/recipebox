@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show, :followeings, :followers]
-  
-  def show
-    @recipes = current_user.recipes.order('created_at DESC').page(params[:page])
-    @user = current_user
-  end
+  before_action :require_user_logged_in, only: [:show, :followings, :followers]
+  before_action :set_user, only: [:show, :followings, :followers]
 
   def new
     @user = User.new
@@ -12,7 +8,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
     if @user.save
       flash[:success] = 'ユーザー登録しました。'
       session[:user_id] = @user.id
@@ -23,14 +18,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+    @recipes = @user.recipes.order('created_at DESC').page(params[:page])
+  end
+  
   def followings
-    @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
     counts(@user)
   end
   
   def followers
-    @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
     counts(@user)
   end
@@ -39,5 +36,9 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
   end
 end

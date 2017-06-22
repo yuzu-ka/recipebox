@@ -1,10 +1,10 @@
 <div class="user-profile">
   <div class="name text-center">
-    <h1><%= current_user.name %></h1>
+    <h1><%= @user.name %></h1>
     <%= render 'relationships/follow_button', user: @user %>
   </div>
   <div>
-    <%= render 'recipes/recipes_short', recipes: @recipes, user: @user %>
+    <%= render 'recipes/recipes_short', recipes: @recipes %>
     <%= paginate @recipes %>
   </div>
 </div>
