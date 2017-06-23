@@ -1,13 +1,18 @@
 <% recipes.each do |recipe| %>
-  <div style="display: inline-block; height: 280px; width: 280px;">
-    <div class="thumbnail", style="background: #fff; height: 275px; width: 275px; box-shadow: 1px 1px 6px rgba(0,0,0,0.2);">
-      <div class="caption">
-        <h3 class="text-center text-warning"><%= recipe.title %></h3>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail image-responsive", style="overflow: hidden;">
+      <% unless recipe.picture? %>
+          <div style="height: 250px; display:table; margin: 10px auto 5px;"><%= image_tag "/images/sample00.jpg", width: '250px', height: '250px' %></div>
+      <% else %>
+        <div style="height: 250px; display:table; margin: 10px auto 5px;"><%= image_tag recipe.picture %></div>
+      <% end %>
+      <div class="caption", style="height: 200px;">
+        <div style="height: 43px; overflow:hidden;"><h3 class="text-warning", style="line-height: 1.3; margin-top: 10px;"><%= recipe.title %></h3></div>
         <% user = recipe.user %>
         <div class="bg-danger">
-          <%= link_to user.name, user_path(user), class: 'btn btn-sm btn-success text-left' %><span class="btn btn-sm text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
+          <%= link_to user.name, user_path(user), class: 'btn btn-xs btn-success text-left' %><span class="btn btn-xs text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
         </div>
-        <p class="text-muted"><%= recipe.content %></p>
+        <p class="text-muted", style="line-height: 1.3; text-align: justify;"><%= recipe.content %></p>
         <%= link_to 'レシピ詳細', recipe_path(recipe), class: "btn btn-sm btn-warning btn-block" %>
       </div>
     </div>
