@@ -1,6 +1,6 @@
 <% recipes.each do |recipe| %>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
+  <div style="display: inline-block; height: 280px; width: 280px;">
+    <div class="thumbnail", style="background: #fff; height: 275px; width: 275px; box-shadow: 1px 1px 6px rgba(0,0,0,0.2);">
       <div class="caption">
         <h3 class="text-center text-warning"><%= recipe.title %></h3>
         <% user = recipe.user %>

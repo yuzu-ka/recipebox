@@ -11,6 +11,9 @@
       <div class="panel-body">
         <p><%= @recipe.content %></p>
       </div>
+      <div>
+        <%= image_tag @recipe.picture.url if @recipe.picture? %>
+      </div>
       <div class="table-responsive">
         <table class="table table-striped table-condensed">
           <thead>

@@ -15,3 +15,4 @@
 //= require_tree .
 //= require 'jquery'
 //= require nested_form_fields
+//= require bootstrap-filestyle

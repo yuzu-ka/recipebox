@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [ :edit, :update, :destroy]
   before_action :correct_user, only: [:destroy, :edit, :update]
   before_action :recipe_params_show, only: [:show]
+  before_action :require_user_logged_in, only: [:create, :destroy]
  
   def show
   end
@@ -40,7 +41,7 @@ class RecipesController < ApplicationController
   
   def recipe_params
     params.require(:recipe).permit(
-      :title, :content, :volume, 
+      :title, :content, :volume, :picture,
       ingredients_attributes: [:id, :name, :amount, :_destroy], 
       instractions_attributes: [:id, :content, :_destroy]
       )
@@ -58,6 +59,12 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.find_by(id: params[:id])
     unless @recipe
       redirect_to root_path
+    end
+  end
+  
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, "should be less than 5MB")
     end
   end
 end
