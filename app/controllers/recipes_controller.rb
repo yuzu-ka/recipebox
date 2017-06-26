@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [ :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:destroy, :edit, :update]
-  before_action :recipe_params_show, only: [:show]
   before_action :require_user_logged_in, only: [:create, :destroy]
  
   def show
@@ -25,7 +24,6 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -49,10 +47,6 @@ class RecipesController < ApplicationController
   
   def set_recipe
     @recipe = Recipe.find_by(params[:id])
-  end
-  
-  def recipe_params_show
-    @recipe = Recipe.find_by(id: params[:id])
   end
   
   def correct_user
