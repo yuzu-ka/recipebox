@@ -9,4 +9,12 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :ingredients, allow_destroy: true
   accepts_nested_attributes_for :instractions, allow_destroy: true
   mount_uploader :picture, PictureUploader
+  
+  private
+  
+  def picture_size
+    if picture.size > 20.megabytes
+      errors.add(:picture, "should be less than 20MB")
+    end
+  end
 end
