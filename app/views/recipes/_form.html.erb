@@ -27,7 +27,6 @@
             <th>分量</th>
           </tr>
           <%= f.nested_fields_for :ingredients, wrapper_tag: :tr do |q| %>
-            <%= q.hidden_field :id %>
             <td class="col-xs-6"><%= q.text_field :name, class: 'form-control', placeholder:'材料名' %></td>
             <td class="col-xs-6"><%= q.text_field :amount, class: 'form-control', placeholder:'分量（例：30g, 大さじ1）' %></td>
             <td>
