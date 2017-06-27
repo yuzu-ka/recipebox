@@ -6,7 +6,7 @@
       <% else %>
         <div style="height: 250px; display:table; margin: 10px auto 5px;"><%= image_tag recipe.picture, width: '250px', height: '250px' %></div>
       <% end %>
-      <div class="caption", style="overflow:hidden; height: 130px;">
+      <div class="caption", style="overflow:hidden; height: 180px;">
         <div style="height: 37px; overflow:hidden;"><h3 class="text-warning", style="font-size: 17.7px; line-height: 1.45; margin-top: 10px;"><%= recipe.title %></h3></div>
         <% user = recipe.user %>
         <div class="bg-danger", style="margin: 6px auto 6px;">
@@ -15,8 +15,8 @@
         <div>
           <p class="text-muted", style="height: 45px; overflow:hidden; line-height: 1.3; font-size: 13px; text-align: justify;"><%= recipe.content %></p>
         </div>
-      </div>
       <%= link_to 'レシピ詳細', recipe_path(recipe), class: "btn btn-sm btn-warning btn-block" %>
+      </div>
     </div>
   </div>
 <% end %>
