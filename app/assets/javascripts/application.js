@@ -14,6 +14,8 @@
 
 //= require_tree .
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-filestyle
 //= require nested_form_fields
+//= require turbolinks
