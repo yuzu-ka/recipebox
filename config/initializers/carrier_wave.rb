@@ -5,6 +5,11 @@ CarrierWave.configure do |config|
     aws_secret_access_key: ENV['S3_SECRET_KEY'],
     region: ENV['S3_REGION']
     }
+    
+    # 公開・非公開の切り替え
+    config.fog_public = true
+    # 日本語ファイル名の設定
+    CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 
     case Rails.env
     when 'development'
