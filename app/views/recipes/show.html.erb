@@ -16,7 +16,7 @@
         <% unless @recipe.picture? %>
           <div style="height: 250px; display:table; margin: 0px auto 5px;"><%= image_tag "/images/sample00.jpg", width: '250px', height: '250px' %></div>
         <% else %>
-          <div style="height: 250px; display:table; margin: 0px auto 5px;"><%= image_tag @recipe.picture, width: '250px', height: '250px' %></div>
+          <div style="height: 250px; display:table; margin: 0px auto 5px;"><%= image_tag @recipe.picture.url, width: '250px', height: '250px' %></div>
         <% end %>
       </div>
       <div class="table-responsive">
