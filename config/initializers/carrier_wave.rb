@@ -14,9 +14,9 @@ CarrierWave.configure do |config|
     case Rails.env
     when 'development'
         config.fog_directory  = ENV['S3_BUCKET']
-        config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/specialrecipebox'
+        config.asset_host = ENV['S3_URL']
     when 'production'
         config.fog_directory  = ENV['S3_BUCKET']
-        config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/specialrecipebox'
+        config.asset_host = ENV['S3_URL']
     end
 end
