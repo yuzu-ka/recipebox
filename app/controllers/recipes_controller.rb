@@ -28,12 +28,19 @@ class RecipesController < ApplicationController
   end
 
   def update
+    if @recipe.update(correct_user)
+      flash[:success] = 'レシピを更新しました。'
+      redirect_to @recipe
+    else
+      flash.now[:danger] = 'レシピを更新できませんでした。'
+      render :edit
+    end
   end
 
   def destroy
     @recipe.destroy
     flash[:success] = 'レシピを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
   end
   
   private

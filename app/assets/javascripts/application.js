@@ -11,10 +11,11 @@
 // about supported directives.
 //
 
-//= require_tree .
+
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require bootstrap-filestyle
 //= require nested_form_fields
+//= require_tree .
 //= require turbolinks
