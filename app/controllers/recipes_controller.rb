@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if @recipe.update(correct_user)
+    if @recipe.update(recipe_params)
       flash[:success] = 'レシピを更新しました。'
       redirect_to @recipe
     else
