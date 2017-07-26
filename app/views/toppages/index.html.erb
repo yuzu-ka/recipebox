@@ -6,8 +6,8 @@
         <p>”あの味”、残しませんか？</p>
         <h2>もっと気軽にレジピ保存を。</h2>
         <% unless logged_in? %>
-          <%= link_to 'RecipeBoxを始める（新規登録）', signup_path, class:"btn btn-new btn-md" %>
-          <%= link_to 'ログイン（登録済の方はこちら）', login_path, class: "btn btn-login btn-md" %>
+          <%= link_to '新規登録', signup_path, class:"btn btn-new btn-md" %>
+          <%= link_to 'ログイン', login_path, class: "btn btn-login btn-md" %>
         <% end %>
       </div>
     </div>
