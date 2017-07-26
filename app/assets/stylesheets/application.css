@@ -2,7 +2,7 @@
 
 /* body */
 body {
-  background: #948080;
+  background: #928178;
 }
 
 footer {
@@ -11,7 +11,7 @@ footer {
 
 /* navbar */
 .navbar {
-  background-color: #ffcccc;
+  background-color: #fcd575;
 }
 .navbar-header img {
   margin-top: 5px;
@@ -60,15 +60,72 @@ footer {
 }
 
 .cover .cover-inner .cover-contents p {
-  font-family: 'Neucha', cursive;
-  font-size: 17px;
+  font-family: 'Kokoro';
+  font-size: 16px;
+  letter-spacing: .28em;
   margin-top: 28px;
   margin-bottom: 10px;
 }
 
 .cover .cover-inner .cover-contents h2 {
-  font-family: 'Walter Turncoat', cursive;
-  font-size: 20px;
-  margin-top: -10px;
+  font-family: "Sawarabi Gothic";
+  letter-spacing: .17em;
+  font-size: 13px;
+  margin-top: 10px;
   margin-bottom: 28px;
+}
+
+.btn::before,
+.btn::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+
+.btn,
+.btn::before,
+.btn::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn-new {
+  background-color: #f09199;
+  color: #460e44;
+}
+
+.btn-new:hover {
+  background-color: #f4b3c2;
+}
+
+.btn-login {
+  background-color: #93ca76;
+  color: #460e44;
+}
+
+.btn-login:hover {
+  background-color: #e0ebaf;
+}
+
+.btn-name {
+  background-color: #93ca76;
+  color: #460e44;
+}
+
+.btn-name:hover {
+  background-color: #e0ebaf;
+}
+
+.btn-show {
+  background-color: #fcd575;
+  text-align: center;
+  color: #460e44;
+}
+
+.btn-show:hover {
+  background-color: #fff1cf;
 }
