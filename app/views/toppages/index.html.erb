@@ -5,7 +5,10 @@
         <h1>レシピボックス</h1>
         <p>”あの味”、残しませんか？</p>
         <h2>もっと気軽にレシピ保存を。</h2>
-        <% unless logged_in? %>
+        <% if logged_in? %>
+          <%= link_to 'レシピを書く', new_recipe_path, class:"btn btn-new-recipe btn-md" %>
+          <%= link_to 'マイページへ', user_path(current_user), class:"btn btn-mypage btn-md" %>
+        <% else %>
           <%= link_to '新規登録', signup_path, class:"btn btn-new btn-md" %>
           <%= link_to 'ログイン', login_path, class: "btn btn-login btn-md" %>
         <% end %>

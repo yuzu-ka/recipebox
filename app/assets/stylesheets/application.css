@@ -130,20 +130,22 @@ footer {
   background-color: #fff1cf;
 }
 
-.recipe-title {
-  font-family: "Sawarabi Gothic Josefin Slab", serif;
+.btn-new-recipe {
+  background-color: #f09199;
+  color: #460e44;
 }
 
-.h3-instractions {
-  font-family: "Sawarabi Gothic";
+.btn-new-recipe:hover {
+  background-color: #f4b3c2;
 }
 
-.user-login {
-  margin-top: 30px;
+.btn-mypage {
+  background-color: #93ca76;
+  color: #460e44;
 }
 
-.create-user {
-  margin-top: 30px;
+.btn-mypage:hover {
+  background-color: #e0ebaf;
 }
 
 .btn-follow {
@@ -162,6 +164,22 @@ footer {
 
 .btn-unfollow:hover {
   background-color: #f4b3c2;
+}
+
+.recipe-title {
+  font-family: "Sawarabi Gothic Josefin Slab", serif;
+}
+
+.h3-instractions {
+  font-family: "Sawarabi Gothic";
+}
+
+.user-login {
+  margin-top: 30px;
+}
+
+.create-user {
+  margin-top: 30px;
 }
 
 .user-show-body {
