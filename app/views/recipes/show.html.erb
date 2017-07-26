@@ -1,12 +1,11 @@
 <div class="container">
   <div class="well well-lg col-lg-offset-1 col-lg-10">
-    <h1 class="page-header text-center"><%= @recipe.title %></h1>
+    <h1 class="page-header recipe-title text-center"><%= @recipe.title %></h1>
     <div class="panel-default">
       <div class="panel-heading">
         <h2 class="panel-title">
           <% user = @recipe.user %>
-          <span class="glyphicon glyphicon-user"></span>
-          <%= link_to user.name, user_path(user), class: 'text-left' %><span class="text-muted pull-right"><%= l @recipe.created_at, format: :short %></span>
+          <span class="glyphicon glyphicon-user"></span><%= link_to user.name, user_path(user), class: 'text-left btn btn-xs btn-name' %><span class="text-muted pull-right"><%= l @recipe.created_at, format: :short %></span>
         </h2>
       </div>
       <div class="panel-body">
@@ -32,7 +31,7 @@
         </table>
       </div>
       <div class="panel-body">
-        <h3 class="text-center">作り方</h3>
+        <h3 class="text-center h3-instractions">作り方</h3>
         <div class="col-xs-offset-1 col-sm-offset-2 col-md-offset-4">
           <% @recipe.instractions.each_with_index do |instraction, index| %>
             <p><%= index+1 %>.<%= instraction.content %></p>

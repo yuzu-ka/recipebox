@@ -3,7 +3,7 @@
     <h1><%= @user.name %></h1>
     <%= render 'relationships/follow_button', user: @user %>
   </div>
-  <div>
+  <div class="user-show-body">
     <%= render 'recipes/recipes_short', recipes: @recipes %>
     <%= paginate @recipes %>
   </div>

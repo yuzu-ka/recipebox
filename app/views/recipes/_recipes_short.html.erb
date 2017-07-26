@@ -7,7 +7,7 @@
         <div style="height: 250px; display:table; margin: 10px auto 5px;"><%= image_tag recipe.picture.url, width: '250px', height: '250px' %></div>
       <% end %>
       <div class="caption", style="overflow:hidden; height: 180px;">
-        <div style="height: 37px; overflow:hidden;"><h3 class="text-warning", style="font-size: 17.7px; line-height: 1.45; margin-top: 10px;"><%= recipe.title %></h3></div>
+        <div style="height: 37px; overflow:hidden;"><h3 class="text-warning recipe-title", style="font-size: 17.7px; line-height: 1.45; margin-top: 10px;"><%= recipe.title %></h3></div>
         <% user = recipe.user %>
         <div class="bg-danger", style="margin: 6px auto 6px;">
           <%= link_to user.name, user_path(user), class: 'btn btn-xs btn-name text-left' %><span class="btn btn-xs text-muted pull-right"><%= l recipe.created_at, format: :short %></span>
