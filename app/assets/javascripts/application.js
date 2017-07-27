@@ -17,5 +17,5 @@
 //= require jquery.turbolinks
 //= require bootstrap-filestyle
 //= require nested_form_fields
-//= require_tree .
 //= require turbolinks
+//= require_tree .

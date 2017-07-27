@@ -75,6 +75,7 @@ footer {
   margin-bottom: 28px;
 }
 
+/*
 .btn::before,
 .btn::after {
   position: absolute;
@@ -92,6 +93,8 @@ footer {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
+*/ 
 
 .btn-new {
   background-color: #f09199;
