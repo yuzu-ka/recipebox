@@ -1,60 +1,62 @@
 <div class="col-xs-12">
-  <div class="form-horizontal well well-lg row">
-  <%= form_for(recipe, html: { multipart: true }) do |f| %>
-    <div class="form-group col-xs-12">
-      <%= f.label :name, 'レシピタイトル' %>
-      <%= f.text_area :title, class: 'form-control', placeholder:'レシピタイトルを入力' %>
-    </div>
-    <div class="form-group col-xs-12">
-      <%= f.label :name, 'このレシピについて' %>
-      <%= f.text_area :content, class: 'form-control', placeholder: 'レシピコメント（おすすめポイントなど）' %>
-    </div>
-    <div class="form-group col-xs-12">
-      <%= f.label :name, '分量（〜人分）' %>
-      <%= f.number_field :volume, class: 'form-control', placeholder: '〜人分、整数で入力(例：3)' %>
-    </div>
-    <div data-turbolinks="false", class="form-group col-xs-12">
-      <%= f.label :name, 'レシピフォト' %>
-      <%= f.file_field :picture, class: 'filestyle', "data-buttonText":"Choose file", "data-input":"false", accept:'image/jpeg,image/jpg,image/gif,image/png' %>
-    </div>
+  <div class="form-horizontal well-color well well-lg row">
     <div class="form-group well well-lg row">
-      <%= f.label :name, '材料を入力' %>
-      <table class="table table-striped table-hover">
-        <tbody>
-          <tr>
-            <th>材料名</th>
-            <th>分量</th>
-          </tr>
-          <%= f.nested_fields_for :ingredients, wrapper_tag: :tr do |q| %>
-            <%= q.hidden_field :id %>
-            <td class="col-xs-6"><%= q.text_field :name, class: 'form-control', placeholder:'材料名' %></td>
-            <td class="col-xs-6"><%= q.text_field :amount, class: 'form-control', placeholder:'分量（例：30g, 大さじ1）' %></td>
-            <td><%= q.remove_nested_fields_link 'x', class: 'form-control close', role: 'button' %></td>
-          <% end %>
-        </tbody>
-      </table>
-          <%= f.add_nested_fields_link :ingredients, '材料名をさらに追加', class: 'btn btn-warning', role: 'button' %>
+    <%= form_for(recipe, html: { multipart: true }) do |f| %>
+      <div class="form-group col-xs-12">
+        <%= f.label :name, 'レシピタイトル' %>
+        <%= f.text_area :title, class: 'form-control', placeholder:'レシピタイトルを入力' %>
+      </div>
+      <div class="form-group col-xs-12">
+        <%= f.label :name, 'このレシピについて' %>
+        <%= f.text_area :content, class: 'form-control', placeholder: 'レシピコメント（おすすめポイントなど）' %>
+      </div>
+      <div class="form-group col-xs-12">
+        <%= f.label :name, '分量（〜人分）' %>
+        <%= f.number_field :volume, class: 'form-control', placeholder: '〜人分、整数で入力(例：3)' %>
+      </div>
+      <div data-turbolinks="false", class="form-group col-xs-12">
+        <%= f.label :name, 'レシピフォト' %>
+        <%= f.file_field :picture, class: 'filestyle', "data-buttonText":"Choose file", "data-input":"false", accept:'image/jpeg,image/jpg,image/gif,image/png' %>
+      </div>
     </div>
-    <div class="form-group well well-lg row">
-      <%= f.label :name, '作り方を入力' %>
-      <table class="table table-striped table-hover">
-        <tbody>
-          <tr>
-            <th>作り方</th>
-          </tr>
-          <%= f.nested_fields_for :instractions, wrapper_tag: :tr, class: 'row' do |q| %>
-            <%= q.hidden_field :id %>
-            <td class="col-xs-12"><%= q.text_field :content, class: 'form-control', placeholder:'作り方（手順に応じて入力フィールドを追加してください）' %></td>
-            <td><button type="button" class="close form-control"><span aria-hidden="true"><%= q.remove_nested_fields_link %></span></button></td>
-          <% end %>
-        </tbody>
-      </table>
-          <%= f.add_nested_fields_link :instractions, '作り方をさらに追加', class: 'btn btn-warning', role: 'button' %>
-    </div>
-    <div class="row">
-      <%= f.submit 'レシピを投稿する', class: 'btn btn-success btn-block' %>
-    </div>
-  <% end %>
+      <div class="form-group well well-lg row">
+        <%= f.label :name, '材料を入力' %>
+        <table class="table table-striped table-hover">
+          <tbody>
+            <tr>
+              <th>材料名</th>
+              <th>分量</th>
+            </tr>
+            <%= f.nested_fields_for :ingredients, wrapper_tag: :tr do |q| %>
+              <%= q.hidden_field :id %>
+              <td class="col-xs-6"><%= q.text_field :name, class: 'form-control', placeholder:'材料名' %></td>
+              <td class="col-xs-6"><%= q.text_field :amount, class: 'form-control', placeholder:'分量（例：30g, 大さじ1）' %></td>
+              <td><%= q.remove_nested_fields_link 'x', class: 'form-control close', role: 'button' %></td>
+            <% end %>
+          </tbody>
+        </table>
+            <%= f.add_nested_fields_link :ingredients, '材料名をさらに追加', class: 'btn btn-warning', role: 'button' %>
+      </div>
+      <div class="form-group well well-lg row">
+        <%= f.label :name, '作り方を入力' %>
+        <table class="table table-striped table-hover">
+          <tbody>
+            <tr>
+              <th>作り方</th>
+            </tr>
+            <%= f.nested_fields_for :instractions, wrapper_tag: :tr, class: 'row' do |q| %>
+              <%= q.hidden_field :id %>
+              <td class="col-xs-12"><%= q.text_field :content, class: 'form-control', placeholder:'作り方（手順に応じて入力フィールドを追加してください）' %></td>
+              <td><button type="button" class="close form-control"><span aria-hidden="true"><%= q.remove_nested_fields_link %></span></button></td>
+            <% end %>
+          </tbody>
+        </table>
+            <%= f.add_nested_fields_link :instractions, '作り方をさらに追加', class: 'btn btn-warning', role: 'button' %>
+      </div>
+      <div class="row">
+        <%= f.submit 'レシピを投稿する', class: 'btn btn-success btn-block' %>
+      </div>
+    <% end %>
   </div>
 </div> 
 
