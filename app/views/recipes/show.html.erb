@@ -39,6 +39,7 @@
         </div>
       </div>
       <div class="panel-body">
+        <%= render 'favorites/favorite_button', recipe: @recipe %>
         <% if @recipe.user = current_user %>
           <%= link_to 'レシピを編集する', edit_recipe_path(@recipe), class: "btn btn-sm btn-info btn-block" %>
           <%= link_to 'このレシピを削除', @recipe, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "btn btn-sm btn-default btn-block" %>
