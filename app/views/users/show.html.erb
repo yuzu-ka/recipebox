@@ -1,7 +1,28 @@
 <div class="user-profile">
-  <div class="name text-center">
-    <h1><%= @user.name %></h1>
-    <%= render 'relationships/follow_button', user: @user %>
+  <div class="user-show-panel">
+    <div class="name users-show-name text-center">
+      <h1><%= @user.name %></h1>
+    </div>
+    <div class="follow-button text-center">
+      <%= render 'relationships/follow_button', user: @user %>
+    </div>
+    <div class="user-count">
+      <ul>
+        <li>
+          <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+          投稿レシピ数
+          <span class="badge badge-color"><%= @count_user_recipes %></span>
+        </li>
+        <li>
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <%= link_to followings_user_path(@user) do %>フォロー<span class="badge badge-color"><%= @count_followings %></span><% end %>
+        </li>
+        <li>
+          <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+          <%= link_to followings_user_path(@user) do %>フォロワー<span class="badge badge-color"><%= @count_followers %></span><% end %>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="user-show-body">
     <%= render 'recipes/recipes_short', recipes: @recipes %>

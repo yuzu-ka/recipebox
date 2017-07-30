@@ -20,15 +20,6 @@ class UsersController < ApplicationController
   
   def show
     @recipes = @user.recipes.order('created_at DESC').page(params[:page])
-  end
-  
-  def followings
-    @followings = @user.followings.page(params[:page])
-    counts(@user)
-  end
-  
-  def followers
-    @followers = @user.followers.page(params[:page])
     counts(@user)
   end
   
