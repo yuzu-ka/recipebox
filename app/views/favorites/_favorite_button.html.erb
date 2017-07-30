@@ -1,4 +1,4 @@
-<% if current_user.favorite?(recipe) %>
+<% if current_user.favorites.include?(recipe) %>
   <%= form_for(current_user.favorites.find_by(recipe_id: recipe.id), html: { method: :delete }) do |f| %>
     <%= hidden_field_tag :recipe_id, recipe.id %>
     <%= f.submit 'お気に入りしています', class: 'btn btn-unfavorite btn-sm' %>

@@ -33,6 +33,11 @@ class User < ApplicationRecord
     self.favorites.find_or_create_by(recipe_id: recipe.id)
   end
   
+  def unfavorite(recipe)
+    favorite = self.favorites.find_by(recipe_id: recipe.id)
+    favorite.destroy if favorite
+  end
+  
   def favorite?(recipe)
     self.favorite_recipes.include?(recipe)
   end
