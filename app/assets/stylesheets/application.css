@@ -173,14 +173,29 @@ footer {
 }
 
 .btn-favorite {
-  background-color: #fdeff2;
   color: #460e44;
+  background-color: #fdeff2;
+  text-align: center;
+  width: 100%;
 }
 
 .btn-unfavorite {
   background-color: #f09199;
   color: #460e44;
-  font-weight: bold;
+  width: 100%;
+}
+
+.buttons {
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.buttons .btn {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .recipe-title {
