@@ -1,24 +1,24 @@
 <div class="col-xs-12">
   <div class="form-horizontal well-color well well-lg row">
-    <div class="form-group well well-lg row">
     <%= form_for(recipe, html: { multipart: true }) do |f| %>
-      <div class="form-group col-xs-12">
-        <%= f.label :name, 'レシピタイトル' %>
-        <%= f.text_area :title, class: 'form-control', placeholder:'レシピタイトルを入力' %>
+      <div class="form-group well well-lg row">
+        <div class="form-group col-xs-12">
+          <%= f.label :name, 'レシピタイトル' %>
+          <%= f.text_area :title, class: 'form-control', placeholder:'レシピタイトルを入力' %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :name, 'このレシピについて' %>
+          <%= f.text_area :content, class: 'form-control', placeholder: 'レシピコメント（おすすめポイントなど）' %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :name, '分量（〜人分）' %>
+          <%= f.number_field :volume, class: 'form-control', placeholder: '〜人分、整数で入力(例：3)' %>
+        </div>
+        <div data-turbolinks="false", class="form-group col-xs-12">
+          <%= f.label :name, 'レシピフォト' %>
+          <%= f.file_field :picture, class: 'filestyle', "data-buttonText":"Choose file", "data-input":"false", accept:'image/jpeg,image/jpg,image/gif,image/png' %>
+        </div>
       </div>
-      <div class="form-group col-xs-12">
-        <%= f.label :name, 'このレシピについて' %>
-        <%= f.text_area :content, class: 'form-control', placeholder: 'レシピコメント（おすすめポイントなど）' %>
-      </div>
-      <div class="form-group col-xs-12">
-        <%= f.label :name, '分量（〜人分）' %>
-        <%= f.number_field :volume, class: 'form-control', placeholder: '〜人分、整数で入力(例：3)' %>
-      </div>
-      <div data-turbolinks="false", class="form-group col-xs-12">
-        <%= f.label :name, 'レシピフォト' %>
-        <%= f.file_field :picture, class: 'filestyle', "data-buttonText":"Choose file", "data-input":"false", accept:'image/jpeg,image/jpg,image/gif,image/png' %>
-      </div>
-    </div>
       <div class="form-group well well-lg row">
         <%= f.label :name, '材料を入力' %>
         <table class="table table-striped table-hover">
