@@ -96,6 +96,7 @@ footer {
 .btn-new {
   background-color: #f09199;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-new:hover {
@@ -105,6 +106,7 @@ footer {
 .btn-login {
   background-color: #93ca76;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-login:hover {
@@ -114,6 +116,7 @@ footer {
 .btn-name {
   background-color: #93ca76;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-name:hover {
@@ -133,6 +136,7 @@ footer {
 .btn-new-recipe {
   background-color: #f09199;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-new-recipe:hover {
@@ -142,6 +146,7 @@ footer {
 .btn-mypage {
   background-color: #93ca76;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-mypage:hover {
@@ -160,6 +165,7 @@ footer {
 .btn-unfollow {
   background-color: #f09199;
   color: #460e44;
+  font-weight: bold;
 }
 
 .btn-unfollow:hover {
@@ -215,5 +221,44 @@ footer {
 
 .badge-color {
   background-color: #fcd575;
+  color: #460e44;
+}
+
+.well-users {
+  display: block;
+  width: 100%;
+}
+
+.users-ul {
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8;/*線の外側*/
+  border-radius: 9px;
+  margin-bottom: 30px;
+}
+
+.users-ul li {
+  display: table-cell;
+  vertical-align: middle;
+  color: #460e44;
+}
+
+.follow-users {
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8;/*線の外側*/
+  border-radius: 9px;
+  margin-bottom: 30px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.users-name {
+  font-weight: bold;
+  font-size: 20px;
   color: #460e44;
 }
