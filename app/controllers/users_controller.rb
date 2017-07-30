@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show, :followings, :followers]
-  before_action :set_user, only: [:show, :followings, :followers]
+  before_action :set_user, only: [:show, :followings, :followers, :favorites]
 
   def new
     @user = User.new
@@ -24,14 +24,17 @@ class UsersController < ApplicationController
   end
   
   def followings
-    @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
     counts(@user)
   end
   
   def followers
-    @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
+    counts(@user)
+  end
+  
+  def favorites
+    @favorites = @user.favorite_recipes.page(params[:page])
     counts(@user)
   end
   

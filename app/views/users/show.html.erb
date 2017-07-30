@@ -14,6 +14,10 @@
           <span class="badge badge-color"><%= @count_user_recipes %></span>
         </li>
         <li>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <%= link_to favorites_user_path(@user) do %>お気に入りレシピ<span class="badge badge-color"><%= @count_favorites %></span><% end %>
+        </li>
+        <li>
           <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
           <%= link_to followings_user_path(@user) do %>フォロー<span class="badge badge-color"><%= @count_followings %></span><% end %>
         </li>

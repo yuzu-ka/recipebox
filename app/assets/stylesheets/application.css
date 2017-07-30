@@ -172,6 +172,17 @@ footer {
   background-color: #f4b3c2;
 }
 
+.btn-favorite {
+  background-color: #fdeff2;
+  color: #460e44;
+}
+
+.btn-unfavorite {
+  background-color: #f09199;
+  color: #460e44;
+  font-weight: bold;
+}
+
 .recipe-title {
   font-family: "Sawarabi Gothic Josefin Slab", serif;
 }
