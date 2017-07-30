@@ -1,0 +1,7 @@
+<div class="followings">
+  <div class="follow-users">
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    フォロワー<span class="badge badge-color"><%= @count_followers %></span>
+  </div>
+  <%= render 'users', users: @followers %>
+</div>
