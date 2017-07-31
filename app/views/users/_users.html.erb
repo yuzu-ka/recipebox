@@ -11,16 +11,15 @@
       </li>
       <li>
         <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-        投稿レシピ数
-        <span class="badge badge-color"><%= @count_user_recipes %></span>
+        <%= link_to user_path(user) do %>投稿レシピ数<span class="badge badge-color"><%= @count_user_recipes %></span><% end %>
       </li>
       <li>
         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-        <%= link_to followings_user_path(@user) do %>フォロー<span class="badge badge-color"><%= @count_followings %></span><% end %>
+        <%= link_to followings_user_path(user) do %>フォロー<span class="badge badge-color"><%= @count_followings %></span><% end %>
       </li>
       <li>
         <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-        <%= link_to followings_user_path(@user) do %>フォロワー<span class="badge badge-color"><%= @count_followers %></span><% end %>
+        <%= link_to followings_user_path(user) do %>フォロワー<span class="badge badge-color"><%= @count_followers %></span><% end %>
       </li>
     </ul>
   </div>
