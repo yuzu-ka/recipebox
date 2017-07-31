@@ -15,11 +15,8 @@
         <div>
           <p class="text-muted", style="height: 45px; overflow:hidden; line-height: 1.3; font-size: 13px; text-align: justify;"><%= recipe.content %></p>
         </div>
-        <div class="col-xs-6">
+        <div>
           <%= link_to 'レシピ詳細', recipe_path(recipe), class: "btn btn-sm btn-block btn-show" %>
-        </div>
-        <div class="col-xs-6">
-          <%= render 'favorites/favorite_button', recipe: recipe %>
         </div>
       </div>
     </div>
